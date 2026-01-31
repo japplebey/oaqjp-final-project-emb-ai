@@ -18,6 +18,10 @@ def get_emotions():
     # Pass the text to Emotion Detector function and store the response
     response = emotion_detector(text_to_analyze)
 
+    # Handle empty response
+    if(response['dominant_emotion' == None]):
+        return " Invalid text! Please try again!"
+
     # Format output
     output = format_output(response)    
     return output
